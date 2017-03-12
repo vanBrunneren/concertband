@@ -21,6 +21,7 @@ Route::get('/Kontakt', 'PublicController@contact');
 Route::post('/Kontakt', 'PublicController@contactSave');
 
 Route::get('/Portrait', 'PublicController@portrait');
+Route::get('/News', 'PublicController@news');
 Route::get('/Intern', 'PublicController@intern')->middleware('auth');
 
 Route::get('/admin', 'AdminController@index')->middleware('admin');
@@ -57,6 +58,14 @@ Route::get('/admin/categories/edit/{category}', 'CategoryController@edit')->midd
 Route::post('/admin/categories/edit/{category}', 'CategoryController@editSave')->middleware('admin');
 Route::get('/admin/categories/delete/{category}', 'CategoryController@delete')->middleware('admin');
 
+Route::get('/admin/news', 'NewsController@index')->middleware('admin');
+Route::get('/admin/news/index', 'NewsController@index')->middleware('admin');
+Route::get('/admin/news/create', 'NewsController@create')->middleware('admin');
+Route::post('/admin/news/create', 'NewsController@editSave')->middleware('admin');
+Route::get('/admin/news/edit/{news}', 'NewsController@edit')->middleware('admin');
+Route::post('/admin/news/edit/{news}', 'NewsController@editSave')->middleware('admin');
+Route::get('/admin/news/delete/{news}', 'NewsController@delete')->middleware('admin');
+
 Route::get('/admin/portrait', 'PortraitController@index')->middleware('admin');
 Route::get('/admin/portrait/index', 'PortraitController@index')->middleware('admin');
 Route::get('/admin/portrait/create', 'PortraitController@create')->middleware('admin');
@@ -66,6 +75,9 @@ Route::post('/admin/portrait/edit/{portrait}', 'PortraitController@editSave')->m
 Route::get('/admin/portrait/delete/{portrait}', 'PortraitController@delete')->middleware('admin');
 
 Route::post('/admin/portrait/image/remove/{portrait}', 'PortraitController@removeImage')->middleware('admin');
+
+Route::get('/admin/user/changepw', 'UserController@changepw')->middleware('admin');
+Route::post('/admin/user/changepw', 'UserController@changepwSave')->middleware('admin');
 
 Route::auth();
 

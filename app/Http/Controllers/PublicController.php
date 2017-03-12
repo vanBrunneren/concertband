@@ -7,6 +7,7 @@ use App\Home;
 use App\Celebration;
 use App\Category;
 use App\Portrait;
+use App\News;
 use App\ContactForm;
 use App\Http\Requests;
 use DB;
@@ -95,6 +96,7 @@ class PublicController extends Controller
          Mail::send('emails.sent_contact_form', ['emailform' => $emailform], function($message) {
             $message->from('info@concertband-lenzburg.ch', 'Concertband Lenzburg');
             $message->to("pascal.brunner@gmx.ch", "Pascal Brunner");
+            $message->to("praesident@concertband-lenzburg.ch", "Präsident Concertband Lenzburg");
             $message->subject('Kontaktformular concertband-lenzburg.ch');
         });
 
@@ -116,6 +118,13 @@ class PublicController extends Controller
       public function sml() 
       {
          return view('public.sml');
+      }
+
+      public function news() 
+      {
+         $news = News::orderBy('created_at', 'desc')->get();
+
+         return view('public.news', compact('news'));
       }
 
 }

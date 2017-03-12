@@ -35,7 +35,7 @@
 		<div class="wrapper">
 			<div class="container flex-grow">
 				<div class="header row">
-					<div class="col-lg-3 col-md-3 hidden-xs header-lg-left">
+					<div class="col-lg-3 col-md-3 hidden-xs hidden-sm header-lg-left">
 						<a href="/">
 							@if(Request::is('SML'))
 								<img src="/images/sml_punkt.bmp" class="img-responsive">
@@ -48,7 +48,7 @@
 						<img src="/images/header_right.jpg">
 					</div>
 
-					<div class="col-xs-12 hidden-lg hidden-md hidden-sm colorized-header">
+					<div class="col-xs-12 hidden-lg hidden-md colorized-header">
 						<div class="xs-button">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -74,33 +74,36 @@
 
 
 
-					<div class="navigation row hidden-xs">
+					<div class="navigation row hidden-xs hidden-sm">
+						<div class="row seven-cols">
 						@foreach($navigation as $nav)
-							@if(Request::is('SML'))
-								@if($nav->name !== 'Home' AND $nav->name !== 'Intern')
+							
+								@if(Request::is('SML'))
+									@if($nav->name !== 'Home' AND $nav->name !== 'Intern')
+										<a href="{{ $nav->route }}">
+											<div class="col-lg-1 col-md-1 col-sm-1 text-center navigation-button">
+												{{ $nav->name }}
+												@if(Request::is($nav->name))
+													<div class="navigation-picker"></div>
+												@endif
+											</div>
+										</a>
+									@else
+										<div class="col-lg-1 col-md-1 col-sm-1 text-center navigation-button">		
+										</div>
+									@endif
+								@else
 									<a href="{{ $nav->route }}">
-										<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">
+										<div class="col-lg-1 col-md-1 col-sm-1 text-center navigation-button">
 											{{ $nav->name }}
 											@if(Request::is($nav->name))
 												<div class="navigation-picker"></div>
 											@endif
 										</div>
 									</a>
-								@else
-									<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">		
-									</div>
 								@endif
-							@else
-								<a href="{{ $nav->route }}">
-									<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">
-										{{ $nav->name }}
-										@if(Request::is($nav->name))
-											<div class="navigation-picker"></div>
-										@endif
-									</div>
-								</a>
-							@endif
 						@endforeach
+						</div>
 					</div>
 					
 					<div class="mobile-navigation row">

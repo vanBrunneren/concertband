@@ -24,7 +24,7 @@ class AdminMiddleware
             return redirect()->guest('login');
         }
 
-        if(Auth::user()->id == 1 || Auth::user()->id == 3) {
+        if(Auth::user()->id == 1 || Auth::user()->id == 3 || Auth::user()->id == 4) {
             return $next($request);
         } else {
             return redirect()->guest('login');
