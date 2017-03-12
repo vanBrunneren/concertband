@@ -142,9 +142,9 @@
 						<div class="row">	
 							<div class="col-xs-12 text-center footer-text">
 								@if(Request::is('SML'))
-									&copy; 2016 stadtmusik-lenzburg.ch
+									&copy; 2017 stadtmusik-lenzburg.ch
 								@else
-									&copy; 2016 concertband-lenzburg.ch
+									&copy; 2017 concertband-lenzburg.ch
 								@endif
 							</div>
 						</div>

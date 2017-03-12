@@ -32,6 +32,7 @@ Route::get('/admin/navigation/orderUp/{nav}', 'NavigationController@orderUp')->m
 Route::get('/admin/navigation/orderDown/{nav}', 'NavigationController@orderDown')->middleware('admin');
 
 Route::get('/admin/home', 'AdminHomeController@index')->middleware('admin');
+Route::post('/admin/home', 'AdminHomeController@indexSave')->middleware('admin');
 Route::get('/admin/home/index', 'AdminHomeController@index')->middleware('admin');
 Route::post('/admin/home/index', 'AdminHomeController@indexSave')->middleware('admin');
 

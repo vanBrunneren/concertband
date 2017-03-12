@@ -38,9 +38,10 @@ class PublicController extends Controller
                         ->select('*', 'cbl_agenda.id as id', 'cbl_agenda.name as name', 'cbl_category.name as category_name')
                         ->join('cbl_category', 'cbl_agenda.category_id', '=', 'cbl_category.id')
                         ->where('cbl_agenda.date', '>', date('Y-m-d H:i:s'))
-                        ->orderBy('date')
+                        ->whereNull('cbl_agenda.deleted_at')
+                        ->orderBy('cbl_category.sort')
+                        ->orderBy('cbl_agenda.date')
                         ->get();
-
 
          $categories = array();
          foreach($tempcat as $cat) {
@@ -52,6 +53,10 @@ class PublicController extends Controller
                }
             }
          }
+
+         usort($categories, function($a, $b) {
+             return $a['sort'] - $b['sort'];
+         });
 
    		return view('public.agenda', compact('agendas', 'categories'));
    	}
