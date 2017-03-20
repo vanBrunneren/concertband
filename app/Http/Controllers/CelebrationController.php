@@ -25,10 +25,12 @@ class CelebrationController extends Controller
     	$celebration = Celebration::first();
     	
         if(preg_match('/class="([a-zA-Z-]*)"/', $results['text'])) {
-            $text = preg_replace('/class="([a-zA-Z-]*)"/', 'class="img-responsive"', $results['text']);
+            $text = preg_replace('/class="([a-zA-Z-]*)"/', 'class="img-responsive hidden-sm hidden-xs"', $results['text']);
         } else {
-            $text = str_replace("<img", "<img class='img-responsive'", $results['text']);
+            $text = str_replace("<img", "<img class='img-responsive hidden-sm hidden-xs'", $results['text']);
         }
+
+
         
         $celebration->text = $text;
     	$celebration->save();
