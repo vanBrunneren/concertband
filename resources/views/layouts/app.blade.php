@@ -62,7 +62,6 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/admin/user/changepw') }}"><i class="fa fa-btn fa-pencil-square-o"></i>Passwort ändern</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                 </ul>
                             </li>

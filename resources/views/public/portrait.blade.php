@@ -12,13 +12,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-3">
-					<img src="{{ $port->imagepath }}" class="img-responsive">
-				</div>
-				<div class="col-xs-9">
-					<p>{{ $port->name }}</p>
-					{!! $port->shortDescription !!}
-				</div>
+				@if($port->imagepath) 
+					<div class="col-xs-3">
+						<img src="{{ $port->imagepath }}" class="img-responsive">
+					</div>
+					<div class="col-xs-9">
+						<p>{{ $port->name }}</p>
+						{!! $port->shortDescription !!}
+					</div>
+				@else
+					<div class="col-xs-12">
+						<p>{{ $port->name }}</p>
+						{!! $port->shortDescription !!}
+					</div>
+				@endif
 			</div>
 		
 			

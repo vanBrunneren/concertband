@@ -122,7 +122,7 @@ class PublicController extends Controller
 
       public function news() 
       {
-         $news = News::orderBy('created_at', 'desc')->get();
+         $news = News::orderBy('date', 'desc')->get();
 
          return view('public.news', compact('news'));
       }

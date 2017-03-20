@@ -76,9 +76,6 @@ Route::get('/admin/portrait/delete/{portrait}', 'PortraitController@delete')->mi
 
 Route::post('/admin/portrait/image/remove/{portrait}', 'PortraitController@removeImage')->middleware('admin');
 
-Route::get('/admin/user/changepw', 'UserController@changepw')->middleware('admin');
-Route::post('/admin/user/changepw', 'UserController@changepwSave')->middleware('admin');
-
 Route::auth();
 
 //Route::get('/home', 'HomeController@index');

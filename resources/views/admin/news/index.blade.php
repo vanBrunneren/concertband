@@ -20,7 +20,7 @@
 				@foreach($news as $entry)
 
 					<tr>
-						<td>{{ date('d.m.Y', strtotime($entry->created_at)) }}</td>
+						<td>{{ date('d.m.Y', strtotime($entry->date)) }}</td>
 						<td><a href="/admin/news/edit/{{ $entry->id }}">{{ $entry->title }}</a></td>
 						<td class="text-right">
 							<a class="menu-link" href="/admin/news/edit/{{ $entry->id }}">

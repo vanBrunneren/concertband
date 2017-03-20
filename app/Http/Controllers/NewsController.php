@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     public function index() 
     {
-    	$news = News::orderBy('created_at', 'desc')
+    	$news = News::orderBy('date', 'desc')
     							->get();
     	return view('admin.news.index', compact('news'));
     }
@@ -39,6 +39,7 @@ class NewsController extends Controller
             $text = str_replace("<img", "<img class='img-responsive'", $results['text']);
         }
 
+        $news->date = date('Y-m-d', strtotime($request->date));
     	$news->text = $text;
     	$news->save();
     	return view('admin.news.edit', compact('news'));
