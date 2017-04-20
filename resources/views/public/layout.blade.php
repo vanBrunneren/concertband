@@ -47,7 +47,11 @@
 					<div class="col-lg-9 col-md-9 hidden-sm hidden-xs text-right header_img">
 						<img src="/images/header_right.jpg">
 					</div>
-
+					{{-- 
+					<div style="height: 180px;" class="col-lg-1 col-md-1 hidden-sm hidden-xs">
+						<img src="/images/sml_punkt.bmp" class="img-responsive" title="Stadtmusik Lenzburg" style="display: inline-block; vertical-align: middle; float: none;">
+					</div>
+					--}}
 					<div class="col-xs-12 hidden-lg hidden-md colorized-header">
 						<div class="xs-button">
 							<span class="icon-bar"></span>
@@ -62,9 +66,9 @@
 						<a href="/" class="mobile-header">
 							<h1 class="header-xs">
 								@if(Request::is('SML'))
-									Stadtmusik
+									Stadtmusik Lenzburg
 								@else
-									Concertband
+									Concertband Lenzburg
 								@endif
 							</h1>
 						</a>
@@ -103,6 +107,13 @@
 									</a>
 								@endif
 						@endforeach
+
+						<a href="http://www.stadtmusik-lenzburg.ch">
+							<div class="col-lg-1 col-md-1 col-sm-1 text-center navigation-button">
+								SML
+							</div>
+						</a>
+
 						</div>
 					</div>
 					
@@ -130,6 +141,13 @@
 									</div>
 								@endif
 							@endforeach	
+
+							<div class="row">
+								<div class="col-xs-12">
+									<a class="menu-link" href="http://www.stadtmusik-lenzburg.ch"><h4>SML</h4></a> 
+								</div>
+							</div>
+
 						</div>
 					</div>
 
@@ -141,7 +159,7 @@
 			</div>
 			<div class="footer container">
 				<div class="row">
-					<div class="hidden-xs col-lg-3 col-md-3 col-sm-4">
+					<div class="hidden-xs hidden-sm col-lg-3 col-md-3">
 						<div class="row">	
 							<div class="col-xs-12 text-center footer-text">
 								@if(Request::is('SML'))
@@ -152,7 +170,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-12 col-lg-9 col-md-9 col-sm-8 text-right">
+					<div class="hidden-xs hidden-sm col-lg-9 col-md-9 text-right">
 						<div class="row">
 							<div class="footer-button col-xs-12">
 								<div class="fb-like" data-href="https://www.facebook.com/Concertband-Lenzburg-147810645243618/?fref=ts" data-width="120" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>

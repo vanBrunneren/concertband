@@ -241,8 +241,8 @@ a {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
   .seven-cols .col-lg-1 {
-    width: 14.285714285714285714285714285714%;
-    *width: 14.285714285714285714285714285714%;
+    width: 12.5%;
+    *width: 12.5%;
   }
 }
 
@@ -255,8 +255,8 @@ a {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
   .seven-cols .col-lg-1 {
-    width: 14.285714285714285714285714285714%;
-    *width: 14.285714285714285714285714285714%;
+    width: 12.5%;
+    *width: 12.5%;
   }
 }
 

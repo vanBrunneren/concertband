@@ -5,13 +5,13 @@
 	<div class="container-fluid">
 		
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-10 col-xs-offset-1">
 				<h1 class="site-title">Agenda</h1>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 table-responsive">
+			<div class="col-xs-10 col-xs-offset-1 table-responsive">
 				<table class="table table-hover">
 
 					@foreach($categories as $category) 
@@ -47,7 +47,9 @@
 											{{ date('d.m.Y', strtotime($agenda->date)) }}
 										</td>
 										<td>
-											{{ date('H:i', strtotime($agenda->date)) }}
+											@if(date('H:i', strtotime($agenda->date)) != "00:00")
+												{{ date('H:i', strtotime($agenda->date)) }}
+											@endif
 										</td>
 										<td>
 											{{ $agenda->name }}

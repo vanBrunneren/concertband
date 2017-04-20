@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<div class="col-xs-10 col-xs-offset-1">
+
 	@if(session()->has('message'))
 		<div class="alert alert-success">
 			{{ session()->get('message') }}
@@ -90,5 +92,6 @@
 		</form>
 	</div>
 
+	</div>
 
 @stop
